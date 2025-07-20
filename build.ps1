@@ -22,7 +22,8 @@ Expand-Archive -LiteralPath "SDL3-devel-$sdlVersion-VC.zip" -DestinationPath "sr
 &cmake --build build\FAudio --config Release
 
 # Upgrade theorafile to current VS platform version and build
-&devenv /upgrade "src\theorafile\visualc\libtheorafile\libtheorafile.vcxproj"
+$devenv = &vswhere.exe '-property' productPath
+&$devenv /upgrade "src\theorafile\visualc\libtheorafile\libtheorafile.vcxproj" | Out-Null
 &msbuild "src\theorafile\visualc\libtheorafile\libtheorafile.vcxproj" /p:Configuration=Release /p:Platform=x64
 
 # Copy files to upload location
