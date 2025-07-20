@@ -28,7 +28,7 @@ jobs:
       # Runs a single command using the runners shell
       - name: Build libraries
         run: |
-          call "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
+          "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
           .\build.ps1
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
