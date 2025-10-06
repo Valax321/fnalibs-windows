@@ -1,5 +1,5 @@
-$sdlVersion = '3.2.20'
-$fna3dVersion = '25.08'
+$sdlVersion = '3.2.24'
+$fna3dVersion = '25.10'
 
 # Get and extract the latest SDL3 VC build
 &gh -R 'libsdl-org/SDL' release download "release-$sdlVersion" --pattern "SDL3-devel-$sdlVersion-VC.zip"
